@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+WORKDIR /opt
+
 RUN apt-get update
 
 # git
@@ -18,10 +20,12 @@ RUN apt-get install -y curl
 
 # sheldon
 
-RUN curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+RUN mkdir -p /opt/.local/bin
 
-ENV PATH $PATH:~/.local/bin
+RUN curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+    | bash -s -- --repo rossmacarthur/sheldon --to /opt/.local/bin
+
+ENV PATH $PATH:/opt/.local/bin
 
 RUN echo 'y' | sheldon init --shell zsh
 
@@ -35,7 +39,7 @@ RUN rm starship.sh
 
 # vim
 
-RUN apt-get install vim
+RUN apt-get install -y vim
 
 # dotfiles
 
