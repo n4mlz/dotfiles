@@ -3,7 +3,23 @@ FROM ubuntu:latest
 # apt install
 
 RUN apt-get update && apt-get install -y \
-    sudo curl git zsh vim
+    sudo curl git zsh vim build-essential
+
+# brew
+
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+ARG brew=/home/linuxbrew/.linuxbrew/bin/brew
+
+# sheldon
+
+RUN $brew install sheldon
+
+# # starship
+
+RUN $brew install starship
 
 # add user
 
@@ -18,23 +34,6 @@ RUN groupadd -g $GID $GROUPNAME && \
     echo "$USERNAME   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USERNAME
 WORKDIR /home/$USERNAME/
-
-# sheldon
-
-RUN curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to $HOME/.local/bin
-
-ENV PATH $PATH:$HOME.local/bin
-
-RUN echo 'y' | sheldon init --shell zsh
-
-# starship
-
-RUN curl -o starship.sh https://starship.rs/install.sh
-
-RUN  sudo sh starship.sh -f
-
-RUN rm starship.sh
 
 # dotfiles
 
