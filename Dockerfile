@@ -1,31 +1,30 @@
 FROM ubuntu:latest
 
-WORKDIR /opt
+# apt install
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y \
+    sudo curl git zsh vim
 
-# git
+# add user
 
-RUN apt-get install -y git
-
-# zsh
-
-RUN apt-get install -y zsh
-
-RUN chsh -s /bin/zsh
-
-# curl
-
-RUN apt-get install -y curl
+ARG USERNAME=dockeruser
+ARG GROUPNAME=dockergroup
+ARG UID=1000
+ARG GID=1000
+ARG PASSWORD=password
+RUN groupadd -g $GID $GROUPNAME && \
+    useradd -m -s /bin/bash -u $UID -g $GID -G sudo $USERNAME && \
+    echo $USERNAME:$PASSWORD | chpasswd && \
+    echo "$USERNAME   ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+USER $USERNAME
+WORKDIR /home/$USERNAME/
 
 # sheldon
 
-RUN mkdir -p /opt/.local/bin
-
 RUN curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to /opt/.local/bin
+    | bash -s -- --repo rossmacarthur/sheldon --to $HOME/.local/bin
 
-ENV PATH $PATH:/opt/.local/bin
+ENV PATH $PATH:$HOME.local/bin
 
 RUN echo 'y' | sheldon init --shell zsh
 
@@ -33,16 +32,14 @@ RUN echo 'y' | sheldon init --shell zsh
 
 RUN curl -o starship.sh https://starship.rs/install.sh
 
-RUN  sh starship.sh -f
+RUN  sudo sh starship.sh -f
 
 RUN rm starship.sh
-
-# vim
-
-RUN apt-get install -y vim
 
 # dotfiles
 
 RUN git clone https://github.com/Nameless-itf23/dotfiles.git
 
 RUN ./dotfiles/scripts/deploy.sh
+
+RUN sudo chsh -s /bin/zsh
