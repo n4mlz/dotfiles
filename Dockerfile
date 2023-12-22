@@ -2,8 +2,8 @@ FROM ubuntu:latest
 
 # apt install
 
-RUN apt-get update && apt-get install -y \
-    sudo curl git zsh vim build-essential
+RUN apt update && apt install -y \
+    sudo curl build-essential git zsh vim 
 
 # add user
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd `dirname $0`
+cd $(dirname $0)
 cd ../files
 
 create_symbolic_link() {
@@ -13,7 +13,7 @@ create_symbolic_link() {
 }
 
 main() {
-    for file in `\find ./ -maxdepth 30 -type f`; do
+    for file in $(\find ./ -maxdepth 30 -type f); do
         create_symbolic_link $file
     done
 }
