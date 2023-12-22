@@ -2,8 +2,7 @@ FROM ubuntu:latest
 
 # apt install
 
-RUN apt update && apt install -y \
-    sudo curl build-essential git zsh vim 
+RUN apt update && apt install -y sudo git
 
 # add user
 
@@ -19,26 +18,10 @@ RUN groupadd -g $GID $GROUPNAME && \
 USER $USERNAME
 WORKDIR /home/$USERNAME/
 
-# brew
-
-RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && sudo chmod -R 777 /home/linuxbrew
-
-ARG brew=/home/linuxbrew/.linuxbrew/bin/brew
-
-# sheldon
-
-RUN $brew install sheldon
-
-# # starship
-
-RUN $brew install starship
-
 # dotfiles
 
 RUN git clone https://github.com/Nameless-itf23/dotfiles.git
 
-RUN ./dotfiles/scripts/deploy.sh
+RUN chmod u+x ./dotfiles/scripts/install.sh
 
-RUN sudo chsh -s /bin/zsh
+RUN ./dotfiles/scripts/install.sh
