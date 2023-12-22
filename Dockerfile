@@ -21,7 +21,7 @@ WORKDIR /home/$USERNAME/
 
 # brew
 
-RUN sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && sudo chmod -R 777 /home/linuxbrew
 
