@@ -2,4 +2,4 @@
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
-. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+eval "$(rtx activate zsh)"

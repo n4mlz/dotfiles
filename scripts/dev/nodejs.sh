@@ -1,8 +1,13 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
 main() {
-    brew install asdf
-    asdf plugin add nodejs
-    asdf install nodejs latest
-    asdf global nodejs latest
+    if ! command -v rtx &>/dev/null; then
+        ./rtx.sh
+    fi
+    rtx install node@latest
+    rtx global node@latest
 }
 
 main

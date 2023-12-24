@@ -16,6 +16,7 @@ main() {
     for file in $(\find ./ -maxdepth 30 -type f); do
         create_symbolic_link $file
     done
+    chmod -R 777 $(cd ../; pwd)
 }
 
 main
