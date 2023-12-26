@@ -11,6 +11,8 @@ main() {
         libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
     rtx install python@latest
     rtx global python@latest
+    rtx install poetry@latest
+    rtx global poetry@latest
 }
 
 main
