@@ -6,7 +6,7 @@ apt_brew() {
   sudo apt install -y curl git zsh vim build-essential
   if ! command -v brew &>/dev/null; then
     if [ ! -d /home/linuxbrew ]; then
-      sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     sudo chmod -R 777 /home/linuxbrew
