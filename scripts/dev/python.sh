@@ -3,16 +3,16 @@
 cd $(dirname $0)
 
 main() {
-    if ! command -v rtx &>/dev/null; then
-        ./rtx.sh
+    if ! command -v mise &>/dev/null; then
+        ./mise.sh
     fi
     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
         libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
         libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-    rtx install python@latest
-    rtx global python@latest
-    rtx install poetry@latest
-    rtx global poetry@latest
+    mise install python@latest
+    mise global python@latest
+    mise install poetry@latest
+    mise global poetry@latest
 }
 
 main

@@ -3,11 +3,11 @@
 cd $(dirname $0)
 
 main() {
-    if ! command -v rtx &>/dev/null; then
-        ./rtx.sh
+    if ! command -v mise &>/dev/null; then
+        ./mise.sh
     fi
-    rtx install node@latest
-    rtx global node@latest
+    mise install node@latest
+    mise global node@latest
 }
 
 main
