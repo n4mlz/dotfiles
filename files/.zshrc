@@ -3,3 +3,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
+
+alias dk='docker'
