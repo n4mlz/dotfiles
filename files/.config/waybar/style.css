@@ -1,0 +1,170 @@
+@import "color.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, "SauceCodePro Nerd Font";
+    font-size: 13px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: transparent;
+}
+
+#window {
+    background-color: @base;
+    padding: 0 12px;
+    border-radius: 12px;
+}
+
+window#waybar {
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {}
+
+window#waybar.chromium {}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {}
+
+#workspaces {
+    background-color: @base;
+    border-radius: 12px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {}
+
+#workspaces button.active {
+    background-color: @light;
+    border-radius: 12px;
+}
+
+#workspaces button.urgent {}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    background-color: @base;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+label:focus {}
+
+/* right */
+
+#cpu {
+    color: @red;
+    border-radius: 12px 0 0 12px;
+    padding: 0 0 0 12px;
+}
+
+
+#memory {
+    color: @pink;
+}
+
+
+#temperature {
+    color: @blue;
+}
+
+#temperature.critical {
+    color: #FF0000;
+}
+
+
+#network {
+    color: @aqua;
+}
+
+#network.disconnected {
+    color: @aqua;
+}
+
+
+#pulseaudio {
+    color: @green;
+}
+
+#pulseaudio.muted {
+    color: @green;
+}
+
+
+#battery {
+    color: @yellow;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: #FF0000;
+}
+
+
+#backlight {
+    color: @orange;
+    border-radius: 0 12px 12px 0;
+    padding: 0 12px 0 0;
+}
+
+
+#clock {
+    color: #FFFFFF;
+    background-color: @light;
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 0 4px;
+}
