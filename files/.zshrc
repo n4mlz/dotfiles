@@ -14,4 +14,8 @@ if type mise >/dev/null 2>&1; then
     eval "$(mise activate zsh)"
 fi
 
+# if type batcat >/dev/null 2>&1; then
+#     alias bat='batcat'
+# fi
+
 alias dk='docker'
