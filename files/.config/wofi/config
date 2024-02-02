@@ -1,0 +1,16 @@
+# preference
+dynamic_lines=true
+content_halign=fill
+line_wrap=1
+prompt=menu
+allow_images=true
+allow_markup=true
+width=40%
+dynamic_lines=true
+show_all=false
+hide_scroll=true
+print_command=true
+
+# search
+insensitive=true
+term=alacritty
