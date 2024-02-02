@@ -1,0 +1,35 @@
+import = [
+    "~/.config/alacritty/catppuccin-mocha-custom.toml",
+]
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[font.bold]
+family = "SauceCodePro Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "SauceCodePro Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "SauceCodePro Nerd Font"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>_ "
+
+[window]
+# decoration = "none"
+dynamic_padding = true
+opacity = 0.9
+
+[window.padding]
+x = 5
+y = 0

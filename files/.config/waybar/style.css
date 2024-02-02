@@ -2,7 +2,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, "SauceCodePro Nerd Font";
+    font-family: FontAwesome, "SauceCodePro Nerd Font", monospace;
     font-size: 13px;
     border: 0;
     padding: 0;
