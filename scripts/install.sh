@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-apt_brew() {
+ubuntu() {
     sudo apt install -y curl wget git zsh vim build-essential ubuntu-advantage-tools
     if ! command -v brew &>/dev/null; then
         if [ ! -d /home/linuxbrew ]; then
@@ -15,18 +15,18 @@ apt_brew() {
     brew install starship
 }
 
-pacman_yay() {
+arch() {
     # install scripts
     echo "not supported yet"
 }
 
 install() {
     if command -v apt &>/dev/null; then
-        echo "using apt and brew..."
-        apt_brew
+        echo "using ubuntu mode..."
+        ubuntu
     elif command -v pacman &>/dev/null; then
-        echo "using pacman and yay..."
-        pacman_yay
+        echo "using arch mode..."
+        arch
     else
         echo "pm not found"
     fi
