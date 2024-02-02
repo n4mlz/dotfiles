@@ -14,6 +14,10 @@ if type mise >/dev/null 2>&1; then
     eval "$(mise activate zsh)"
 fi
 
+if type zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+fi
+
 # if type batcat >/dev/null 2>&1; then
 #     alias bat='batcat'
 # fi
