@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 main() {
-    if ! command -v mise &>/dev/null; then
+    if ! type mise > /dev/null 2>&1; then
         ./mise.sh
     fi
     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \

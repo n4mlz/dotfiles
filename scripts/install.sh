@@ -9,7 +9,7 @@ ubuntu() {
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        sudo chmod -R 777 /home/linuxbrew
+        sudo chmod -R u+x /home/linuxbrew
     fi
     brew install sheldon
     brew install starship
