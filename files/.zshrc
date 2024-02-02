@@ -1,3 +1,5 @@
+# init
+
 if [ -e /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -17,6 +19,8 @@ fi
 if type zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
 fi
+
+# alias
 
 if type dust >/dev/null 2>&1; then
     alias du='dust'
