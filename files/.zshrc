@@ -18,8 +18,40 @@ if type zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
 fi
 
-# if type batcat >/dev/null 2>&1; then
-#     alias bat='batcat'
-# fi
+if type dust >/dev/null 2>&1; then
+    alias du='dust'
+fi
+
+if type bat >/dev/null 2>&1; then
+    alias cat='bat'
+fi
+
+if type batcat >/dev/null 2>&1; then
+    alias cat='batcat'
+fi
+
+if type eza >/dev/null 2>&1; then
+    alias ls='eza'
+fi
+
+if type fdfind >/dev/null 2>&1; then
+    alias fd='fdfind'
+fi
+
+if type duf >/dev/null 2>&1; then
+    alias df='duf'
+fi
+
+if type procs >/dev/null 2>&1; then
+    alias ps='procs'
+fi
+
+if type btm >/dev/null 2>&1; then
+    alias top='btm'
+fi
+
+if type zoxide >/dev/null 2>&1; then
+    alias cd='z'
+fi
 
 alias dk='docker'
