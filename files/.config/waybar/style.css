@@ -166,5 +166,5 @@ label:focus {}
     background-color: @light;
     border-radius: 12px;
     padding: 0 12px;
-    margin: 0 4px;
+    margin: 0 0 0 4px;
 }
