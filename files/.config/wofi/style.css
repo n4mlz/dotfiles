@@ -63,7 +63,7 @@ window {
   margin: 0px;
   padding: 10px;
   border: 0.16em solid @lavender;
-  border-radius: 0.1em;
+  border-radius: 0.5em;
   background-color: @base;
   animation: slideIn 0.5s ease-in-out both;
 }
