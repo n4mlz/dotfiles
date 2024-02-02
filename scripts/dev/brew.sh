@@ -1,16 +1,18 @@
 #!/bin/bash
 
-cd $(dirname $0)
-
 apt_brew() {
-    sudo apt install -y curl wget git zsh vim build-essential ubuntu-advantage-tools
+    if [ ! -d /home/linuxbrew ]; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    sudo chmod -R u+x /home/linuxbrew
 }
 
 pacman_yay() {
-    sudo pacman -S curl wget git zsh vim --noconfirm
+    echo "skip brew install"
 }
 
-install() {
+main() {
     if command -v apt &>/dev/null; then
         echo "using apt and brew..."
         apt_brew
@@ -20,16 +22,6 @@ install() {
     else
         echo "pm not found"
     fi
-}
-
-deploy() {
-    ./deploy.sh
-    sudo chsh -s /bin/zsh
-}
-
-main() {
-    install
-    deploy
 }
 
 main

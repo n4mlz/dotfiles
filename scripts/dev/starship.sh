@@ -1,16 +1,17 @@
 #!/bin/bash
 
-cd $(dirname $0)
-
 apt_brew() {
-    sudo apt install -y curl wget git zsh vim build-essential ubuntu-advantage-tools
+    if ! command -v brew &>/dev/null; then
+        ./brew.sh
+    fi
+    brew install starship
 }
 
 pacman_yay() {
-    sudo pacman -S curl wget git zsh vim --noconfirm
+    sudo pacman -S starship --noconfirm
 }
 
-install() {
+main() {
     if command -v apt &>/dev/null; then
         echo "using apt and brew..."
         apt_brew
@@ -20,16 +21,6 @@ install() {
     else
         echo "pm not found"
     fi
-}
-
-deploy() {
-    ./deploy.sh
-    sudo chsh -s /bin/zsh
-}
-
-main() {
-    install
-    deploy
 }
 
 main
