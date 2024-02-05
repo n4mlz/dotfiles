@@ -1,3 +1,9 @@
 [user]
     email = ohutoncat@gmail.com
     name = Nameless-itf23
+
+[color]
+    ui = true
+
+[init]
+    defaultBranch = main
