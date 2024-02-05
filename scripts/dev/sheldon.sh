@@ -8,7 +8,7 @@ apt_brew() {
 }
 
 pacman_yay() {
-    sudo yay -S sheldon --nodiffmenu --combinedupgrade --sudoloop --noconfirm
+    yay -S sheldon --nodiffmenu --combinedupgrade --sudoloop --noconfirm
 }
 
 main() {

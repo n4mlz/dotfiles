@@ -9,7 +9,7 @@ apt_brew() {
 }
 
 pacman_yay() {
-    sudo yay -S mise --nodiffmenu --combinedupgrade --sudoloop --noconfirm
+    yay -S mise --nodiffmenu --combinedupgrade --sudoloop --noconfirm
 }
 
 main() {
