@@ -8,8 +8,8 @@ width=350
 height=100
 margin=10,25
 text-alignment=left
-font=GoMono Nerd Font 11
-format=<i>%a</i><b>\n%s</b>\n%b
+font=SauceCodePro Nerd Font
+format=%a<b>\n%s</b>\n%b
 
 background-color=#2e3440d0
 border-size=2
