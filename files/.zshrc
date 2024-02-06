@@ -20,6 +20,10 @@ if type zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
 fi
 
+if type thefuck >/dev/null 2>&1; then
+    eval $(thefuck --alias)
+fi
+
 # alias
 
 if type dust >/dev/null 2>&1; then
