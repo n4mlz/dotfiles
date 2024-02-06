@@ -1,5 +1,10 @@
 # init
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt incappendhistory
+
 if [ -e /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -48,10 +53,6 @@ fi
 
 if type duf >/dev/null 2>&1; then
     alias df='duf'
-fi
-
-if type procs >/dev/null 2>&1; then
-    alias ps='procs'
 fi
 
 if type btm >/dev/null 2>&1; then
