@@ -1,4 +1,9 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+continuation_prompt = '▶▶ '
+
 format = """
+[\u256d\u2500](#9A348E)\
 [](#9A348E)\
 $os\
 $username\
@@ -18,6 +23,7 @@ $java\
 $julia\
 $nodejs\
 $nim\
+$python\
 $rust\
 $scala\
 [](fg:#86BBD8 bg:#06969A)\
@@ -25,6 +31,13 @@ $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
 [ ](fg:#33658A)\
+\n$character
+"""
+
+[character]
+format = """
+[\u2570\u2500](fg:#9A348E)\
+$symbol \
 """
 
 # Disable the blank line at the start of the prompt
@@ -124,6 +137,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [nim]
 symbol = "󰆥 "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
