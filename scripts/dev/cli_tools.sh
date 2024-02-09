@@ -45,4 +45,4 @@ main() {
     fi
 }
 
-main
+main "$@"

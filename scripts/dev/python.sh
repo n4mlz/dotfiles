@@ -8,7 +8,7 @@ fi
 cd $(dirname $0)
 
 main() {
-    if ! type mise > /dev/null 2>&1; then
+    if ! type mise >/dev/null 2>&1; then
         ./mise.sh
     fi
     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
@@ -20,4 +20,4 @@ main() {
     mise global poetry@latest
 }
 
-main
+main "$@"

@@ -37,4 +37,4 @@ main() {
     deploy
 }
 
-main
+main "$@"

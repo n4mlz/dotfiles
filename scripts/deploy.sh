@@ -24,4 +24,4 @@ main() {
     chmod -R u+x $(cd ../; pwd)
 }
 
-main
+main "$@"
