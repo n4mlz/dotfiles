@@ -8,7 +8,7 @@ fi
 cd $(dirname $0)
 
 apt_brew() {
-    echo "apt: not supported yet"
+    echo "apt: skip install"
 }
 
 pacman_yay() {
