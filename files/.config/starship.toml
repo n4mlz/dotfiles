@@ -6,7 +6,7 @@ format = """
 $shell\
 ($username)\
 $directory\
-($git_branch$git_status[\ue0b0](fg:#3e13c3))\
+($git_branch$git_status[\ue0b0](fg:#55d2fa))\
 $cmd_duration\
 $line_break\
 $character\
@@ -15,24 +15,24 @@ $character\
 [shell]
 format = """
 [\u256d\u2500](fg:#e0f8ff)\
-[\ue0b6](fg:#b133be)\
-[ $indicator ](fg:#ffffff bg:#b133be)\
-[\ue0b0](fg:#b133be bg:#4d3694)\
+[\ue0b6](fg:#fa55e7)\
+[ $indicator ](fg:#ffffff bg:#fa55e7)\
+[\ue0b0](fg:#fa55e7 bg:#555555)\
 """
 disabled = false
 
 [username]
 format = """
 \b\
-[\ue0b0](fg:#b133be bg:#ef5350)\
+[\ue0b0](fg:#fa55e7 bg:#ef5350)\
 [ \uf0e7 $user ](fg:#fffb38 bg:#ef5350)\
-[\ue0b0](fg:#ef5350 bg:#4d3694)\
+[\ue0b0](fg:#ef5350 bg:#555555)\
 """
 disabled = false
 show_always = false
 
 [directory]
-format = "[ $path ](fg:#e4e4e4 bg:#4d3694)[\ue0b0](fg:#4d3694)"
+format = "[ $path ](fg:#e4e4e4 bg:#555555)[\ue0b0](fg:#555555)"
 truncation_length = 0
 truncate_to_repo = false
 truncation_symbol = "…/"
@@ -42,8 +42,8 @@ use_os_path_sep = false
 [git_branch]
 format = """
 \b\
-[\ue0b0](fg:#4d3694 bg:#3e13c3)\
-[ $symbol$branch(:$remote_branch) ](bg:#3e13c3)\
+[\ue0b0](fg:#555555 bg:#55d2fa)\
+[ $symbol$branch(:$remote_branch) ](bg:#55d2fa fg:#353535)\
 """
 symbol = "\ue0a0 "
 
@@ -60,7 +60,7 @@ staged = "+$count"
 renamed = "»"
 deleted = "✘"
 ignore_submodules = false
-format = "([$all_status$ahead_behind$count ](bg:#3e13c3))"
+format = "([$all_status$ahead_behind$count ](bg:#55d2fa fg:#353535))"
 
 [fill]
 symbol = " "

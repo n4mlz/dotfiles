@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $(dirname $0)
+
 # dust(du), bat(cat), eza(ls), fd(find), duf(df), procs(ps),
 # bottom(top), zoxide(cd), ripgrep(grep), httpie(curl)
 

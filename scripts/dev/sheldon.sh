@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $(dirname $0)
+
 apt_brew() {
     if ! command -v brew &>/dev/null; then
         ./brew.sh
