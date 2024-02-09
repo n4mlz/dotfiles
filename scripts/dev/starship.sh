@@ -10,6 +10,7 @@ cd $(dirname $0)
 apt_brew() {
     if ! command -v brew &>/dev/null; then
         ./brew.sh
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
     brew install starship
 }

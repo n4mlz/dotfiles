@@ -23,6 +23,7 @@ apt_brew() {
 
     if ! command -v brew &>/dev/null; then
         ./brew.sh
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
     brew tap tgotwig/linux-dust && brew install dust
     brew install procs bottom httpie
