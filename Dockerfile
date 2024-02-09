@@ -22,6 +22,6 @@ WORKDIR /home/$USERNAME/
 
 RUN git clone https://github.com/Nameless-itf23/dotfiles.git
 
-RUN chmod u+x ./dotfiles/scripts/install.sh
+RUN chmod -R 775 dotfiles
 
 RUN ./dotfiles/scripts/install.sh
