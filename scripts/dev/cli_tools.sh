@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$EUID" -eq 0 ]; then
+    echo "don't run as root"
+    exit 1
+fi
+
 cd $(dirname $0)
 
 # dust(du), bat(cat), eza(ls), fd(find), duf(df), procs(ps),

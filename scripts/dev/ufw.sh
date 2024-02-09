@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ "$EUID" -eq 0 ]; then
+    echo "don't run as root"
+    exit 1
+fi
+
+cd $(dirname $0)
+
 apt_brew() {
     echo "apt: not supported yet"
 }

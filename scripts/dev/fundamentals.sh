@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ "$EUID" -eq 0 ]; then
+    echo "don't run as root"
+    exit 1
+fi
+
+cd $(dirname $0)
+
 apt_brew() {
     sudo apt install -y git binutils make gcc fakeroot wget curl which acpi vi vim less man neofetch strace ltrace build-essential ubuntu-advantage-tools
 }

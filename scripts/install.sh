@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cd $(dirname $0)
-
 if [ "$EUID" -eq 0 ]; then
     echo "don't run as root"
     exit 1
 fi
+
+cd $(dirname $0)
 
 apt_brew() {
     sudo apt install -y curl wget git zsh vim build-essential ubuntu-advantage-tools
