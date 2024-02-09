@@ -3,7 +3,11 @@
 cd $(dirname $0)
 cd ../files
 
-SUDO_HOME=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
+if [ "$EUID" -ne 0 ]; then
+    SUDO_HOME=$HOME
+else
+    SUDO_HOME=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
+fi
 
 create_symbolic_link() {
     from=$(cd $(dirname $1); pwd)/$(basename $1)
