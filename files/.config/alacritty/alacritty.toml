@@ -22,6 +22,21 @@ action = "Paste"
 key = "V"
 mods = "Control"
 
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "-"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "^"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "0"
+mods = "Control"
+
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>_ "
 
