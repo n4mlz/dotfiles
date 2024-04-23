@@ -64,3 +64,6 @@ if type zoxide >/dev/null 2>&1; then
 fi
 
 alias dk='docker'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+
