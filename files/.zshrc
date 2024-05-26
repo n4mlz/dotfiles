@@ -63,6 +63,10 @@ if type zoxide >/dev/null 2>&1; then
     alias cd='z'
 fi
 
+if type nvim >/dev/null 2>&1; then
+    alias vim='nvim'
+fi
+
 alias ll='ls -la'
 
 alias dk='docker'
