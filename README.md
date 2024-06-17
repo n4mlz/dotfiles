@@ -1,4 +1,4 @@
-# n4mlz's Dotfiles 🧊
+# 🧊 n4mlz's Dotfiles
 
 This is my Dotfiles repository with install scripts for Arch Linux and Ubuntu!
 This also provides a set of CLI tools, and can be deployed to SSH-accessible servers, WSL, or containers.
@@ -6,8 +6,8 @@ This also provides a set of CLI tools, and can be deployed to SSH-accessible ser
 
 ![screenshot](./public/screenshot.png)
 
-## Environment 🌱
-### GUI 🖥️
+## 🌱 Environment
+### 🖥️ GUI
 - [Hyprland](https://github.com/hyprwm/Hyprland) _**(Window Manager)**_
 - [hyprpaper](https://github.com/hyprwm/hyprpaper) _**(Wall Paper)**_
 - [Waybar](https://github.com/Alexays/Waybar) _**(Status Bar)**_
@@ -20,7 +20,7 @@ This also provides a set of CLI tools, and can be deployed to SSH-accessible ser
 - [Catppuccin](https://github.com/catppuccin) _**(Theme)**_
 - [cliphist](https://github.com/sentriz/cliphist) _**(Clipboard Manager)**_
 
-### CLI ⌨
+### ⌨ CLI
 - [zsh](https://www.zsh.org/) _**(Shell)**_
 - [AstroNvim](https://github.com/AstroNvim/AstroNvim) _**(Text Editor)**_
 - [sheldon](https://github.com/rossmacarthur/sheldon) _**(Zsh Plugin Manager)**_
@@ -31,7 +31,7 @@ This also provides a set of CLI tools, and can be deployed to SSH-accessible ser
 - [zoxide](https://github.com/ajeetdsouza/zoxide) _**(replacement for `cd`)**_
 - [bottom](https://github.com/ClementTsang/bottom) _**(replacement for `bottom`)**_
 
-## Installation ✅
+## ✅ Installation
 
 Installation scripts automatically detect whether you are using Arch Linux, Ubuntu, WSL, or a Docker container, and perform the optimal installation for each respective environment.
 
@@ -41,17 +41,17 @@ Installation scripts automatically detect whether you are using Arch Linux, Ubun
 - For a minimal installation and create symbolic links: `./scripts/install.sh`
 - To selectively install individual tools: `./scripts/dev/[tool-to-install].sh`
 
-## Features 🪶
+## 🪶 Features
 
-### Supports various environments 🌿
+### 🌿 Supports various environments
 
 This Dotfiles provides a set of CLI tools, and can be deployed to SSH-accessible servers, WSL, or containers.
 
-### Smart Installation 📥
+### 📥 Smart Installation
 
 Installation scripts automatically detect whether you are using Arch Linux, Ubuntu, WSL, or a Docker container, and perform the optimal installation for each respective environment.
 
-### Smart Screen Shot Operations 📱
+### 📱 Smart Screen Shot Operations
 
 My Dotfiles provide a simple and efficient key configuration to define and execute screen capture areas and functionalities.
 
@@ -71,13 +71,13 @@ For example:
 
 When saving to a file, the directory ~/me/pics/screenshot is automatically generated, with the subdirectory named after the current running process (e.g. ~/me/pics/screenshot/firefox).
 
-### (Unfinished) Try my Dotfiles with Docker 🐳
+### 🐳 (Unfinished) Try my Dotfiles with Docker
 
 You can try a Docker container with my Dotfiles deployed from Packages.
 
 (Note: Please be aware that my old version of Dotfiles is currently deployed, as the CI has recently been failing. I will fix this eventually.)
 
-## About me 📨
+## ✉ About me
 - Twitter: [@n4mlz](https://x.com/n4mlz)
 - GitHub: [@n4mlz](https://github.com/n4mlz)
 - My Web Site: [n4mlz.dev](https://n4mlz.dev)
