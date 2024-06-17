@@ -8,8 +8,8 @@ RUN apt update && apt install -y sudo git
 
 ARG USERNAME=dockeruser
 ARG GROUPNAME=dockergroup
-ARG UID=1000
-ARG GID=1000
+ARG UID=1001
+ARG GID=1001
 ARG PASSWORD=password
 RUN groupadd -g $GID $GROUPNAME && \
     useradd -m -s /bin/bash -u $UID -g $GID -G sudo $USERNAME && \
