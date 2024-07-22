@@ -67,6 +67,10 @@ if type nvim >/dev/null 2>&1; then
     alias vim='nvim'
 fi
 
+if type colordiff >/dev/null 2>&1; then
+    alias diff='colordiff'
+fi
+
 alias ll='ls -la'
 
 alias dk='docker'
