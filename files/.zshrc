@@ -71,7 +71,7 @@ if type colordiff >/dev/null 2>&1; then
     alias diff='colordiff -u'
 fi
 
-alias ll='ls -la'
+alias ll='ls -la --group-directories-first'
 
 alias dk='docker'
 alias dcu='docker compose up -d'
