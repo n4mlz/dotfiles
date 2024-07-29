@@ -100,4 +100,8 @@ return {
       },
     },
   },
+
+  {
+    "wakatime/vim-wakatime",
+  }
 }
