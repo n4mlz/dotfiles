@@ -1,6 +1,7 @@
 [user]
     email = n4mlz.dev@gmail.com
     name = n4mlz
+	signingkey = 091B69E9C76CF734
 
 [color]
     ui = true
