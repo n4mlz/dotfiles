@@ -15,3 +15,16 @@
 
 [http]
 	postBuffer = 524288000
+
+[alias]
+    st = status --short
+    co = checkout
+    br = branch
+    c = commit -m
+    a = add
+    l = log --oneline
+    d = diff
+    p = push
+    pl = pull
+    f = fetch
+

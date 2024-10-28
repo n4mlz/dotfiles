@@ -44,7 +44,7 @@ if type batcat >/dev/null 2>&1; then
 fi
 
 if type eza >/dev/null 2>&1; then
-    alias ls='eza'
+    alias ls='eza --icons'
 fi
 
 if type fdfind >/dev/null 2>&1; then
@@ -71,7 +71,17 @@ if type colordiff >/dev/null 2>&1; then
     alias diff='colordiff -u'
 fi
 
-alias ll='ls -la --group-directories-first'
+if type wl-copy >/dev/null 2>&1; then
+    alias -g CC='wl-copy'
+    alias -g CP='wl-paste'
+fi
+
+alias ll='ls -aahl --group-directories-first'
+alias cl='(){cd $1 && ls}'
+alias take='(){ mkdir -p $1 && cd $1 }'
+alias cd.='cd "$(git rev-parse --show-toplevel)"'
+
+alias g='git'
 
 alias dk='docker'
 alias dcu='docker compose up -d'
