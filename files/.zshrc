@@ -76,6 +76,10 @@ if type wl-copy >/dev/null 2>&1; then
     alias -g CP='wl-paste'
 fi
 
+if [ -e ~/go/bin ]; then
+    export PATH=$PATH:~/go/bin
+fi
+
 alias ll='ls -aahl --group-directories-first'
 alias cl='(){cd $1 && ls}'
 alias take='(){ mkdir -p $1 && cd $1 }'
