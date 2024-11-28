@@ -3,7 +3,7 @@
 continuation_prompt = '▶▶ '
 
 format = """
-$username\
+$hostname\
 $directory\
 ($git_branch$git_status[\ue0b0](fg:#55d2fa))\
 $cmd_duration\
@@ -11,15 +11,14 @@ $line_break\
 $character\
 """
 
-[username]
+[hostname]
+ssh_only = false
 format = """
 [\u256d\u2500](fg:#e0f8ff)\
 [\ue0b6](fg:#fa55e7)\
-[ $user ](fg:#ffffff bg:#fa55e7)\
+[ $hostname ](fg:#ffffff bg:#fa55e7)\
 [\ue0b0](fg:#fa55e7 bg:#555555)\
 """
-disabled = false
-show_always = true
 
 [directory]
 format = "[ $path ](fg:#e4e4e4 bg:#555555)[\ue0b0](fg:#555555)"
