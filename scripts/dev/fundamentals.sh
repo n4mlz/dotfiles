@@ -8,7 +8,7 @@ fi
 cd $(dirname $0)
 
 apt_brew() {
-    sudo apt install -y git binutils make gcc fakeroot wget curl acpi vim less man neofetch strace ltrace build-essential ubuntu-advantage-tools
+    sudo apt install -y git binutils make gcc fakeroot wget curl acpi vim less man neofetch strace ltrace build-essential
 }
 
 pacman_yay() {
