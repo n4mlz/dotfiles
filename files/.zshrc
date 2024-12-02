@@ -5,6 +5,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt incappendhistory
 
+export PATH="/home/n4mlz/.local/bin:$PATH"
+
 if [ -e /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
