@@ -39,5 +39,10 @@ apply = ["defer"]
 github = "hlissner/zsh-autopair"
 apply = ["defer"]
 
+[plugins.zsh-romaji-complete]
+github = "aoyama-val/zsh-romaji-complete"
+use = ["_path_files"]
+apply = ["defer"]
+
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"

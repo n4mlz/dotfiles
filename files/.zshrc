@@ -3,6 +3,7 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt HIST_IGNORE_SPACE
 setopt incappendhistory
 
 export PATH="/home/n4mlz/.local/bin:$PATH"
@@ -78,9 +79,8 @@ if type wl-copy >/dev/null 2>&1; then
     alias -g CP='wl-paste'
 fi
 
-if [ -e ~/go/bin ]; then
-    export PATH=$PATH:~/go/bin
-fi
+export PATH=$PATH:~/go/bin
+export PATH=$PATH:~/.cargo/bin
 
 alias ll='ls -aahl --group-directories-first'
 alias cl='(){cd $1 && ls}'
