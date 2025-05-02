@@ -1,4 +1,6 @@
+
 -- You can also add or configure plugins by creating files in this `plugins/` folder
+-- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
 ---@type LazySpec
@@ -15,23 +17,26 @@ return {
 
   -- == Examples of Overriding Plugins ==
 
-  -- customize alpha options
+  -- customize dashboard options
   {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        [[                                                      ]],
-        [[██╗   ██╗███████╗     ██████╗ ██████╗ ██████╗ ███████╗]],
-        [[██║   ██║██╔════╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝]],
-        [[██║   ██║███████╗    ██║     ██║   ██║██║  ██║█████╗  ]],
-        [[╚██╗ ██╔╝╚════██║    ██║     ██║   ██║██║  ██║██╔══╝  ]],
-        [[ ╚████╔╝ ███████║    ╚██████╗╚██████╔╝██████╔╝███████╗]],
-        [[  ╚═══╝  ╚══════╝     ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝]],
-        [[                                                      ]],
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      dashboard = {
+        preset = {
+          header = [[
+          ██╗   ██╗███████╗     ██████╗ ██████╗ ██████╗ ███████╗
+          ██║   ██║██╔════╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+          ██║   ██║███████╗    ██║     ██║   ██║██║  ██║█████╗  
+          ╚██╗ ██╔╝╚════██║    ██║     ██║   ██║██║  ██║██╔══╝  
+           ╚████╔╝ ███████║    ╚██████╗╚██████╔╝██████╔╝███████╗
+            ╚═══╝  ╚══════╝     ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝]],
+        }
+        -- your dashboard configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
       }
-      return opts
-    end,
+    }
   },
 
   -- You can disable default plugins as follows:
@@ -82,26 +87,48 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       filesystem = {
+        follow_current_file = { enabled = true },
+        hijack_netrw_behavior = "open_current",
+        use_libuv_file_watcher = true,
         filtered_items = {
-          visible = true,
+          visible = false,
           show_hidden_count = true,
           hide_dotfiles = false,
-          hide_gitignored = true,
-          hide_by_name = {
-            ".git",
-            ".DS_Store",
-            "thumbs.db",
-            "node_modules",
-          },
-          never_show = {
-            ".git",
-          },
+          hide_gitignored = false,
         },
       },
     },
   },
 
   {
-    "wakatime/vim-wakatime",
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    event = "BufReadPost",
+    opts = {
+      suggestion = {
+        keymap = {
+          accept = false, -- handled by completion engine
+        },
+      },
+    },
+    specs = {
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          options = {
+            g = {
+              -- set the ai_accept function
+              ai_accept = function()
+                if require("copilot.suggestion").is_visible() then
+                  require("copilot.suggestion").accept()
+                  return true
+                end
+              end,
+            },
+          },
+        },
+      },
+    },
   }
 }

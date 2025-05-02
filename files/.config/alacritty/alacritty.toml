@@ -1,7 +1,5 @@
-import = [
-    "~/.config/alacritty/catppuccin-mocha-custom.toml",
-]
-live_config_reload = true
+general.import = ["~/.config/alacritty/catppuccin-mocha-custom.toml"]
+general.live_config_reload = true
 
 [env]
 TERM = "xterm-256color"
