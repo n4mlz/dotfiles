@@ -1,15 +1,30 @@
 [user]
-    email = ohutoncat@gmail.com
+    email = n4mlz.dev@gmail.com
     name = n4mlz
+	signingkey = 091B69E9C76CF734
 
 [color]
     ui = true
 
 [core]
     editor = vim
+	fileMode = false
 
 [init]
     defaultBranch = main
 
 [http]
 	postBuffer = 524288000
+
+[alias]
+    st = status --short
+    co = checkout
+    br = branch
+    c = commit -m
+    a = add
+    l = log --oneline
+    d = diff
+    p = push
+    pl = pull
+    f = fetch
+

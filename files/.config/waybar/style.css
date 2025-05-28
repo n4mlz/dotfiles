@@ -2,22 +2,25 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, "SauceCodePro Nerd Font", monospace;
-    font-size: 13px;
+    font-family: FontAwesome, "Montserrat", monospace;
+    font-size: 12px;
     border: 0;
     padding: 0;
-    margin: 0;
+    margin: 2px 0 2.5px 0;
     color: white;
     background-color: transparent;
 }
 
 #window {
-    background-color: @base;
+    background-color: @foreground;
+    margin: 0px;
     padding: 0 12px;
     border-radius: 12px;
 }
 
 window#waybar {
+    background-color: @background;
+    margin: 0px;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -38,6 +41,7 @@ window#waybar.termite {}
 window#waybar.chromium {}
 
 button {
+    margin: 0px;
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
@@ -49,20 +53,23 @@ button {
 button:hover {}
 
 #workspaces {
-    background-color: @base;
-    border-radius: 12px;
+    margin: 0px;
+    background-color: @foreground;
+    border-radius: 10px;
 }
 
 #workspaces button {
+    margin: 0px;
     padding: 0 5px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #workspaces button:hover {}
 
 #workspaces button.active {
-    background-color: @light;
-    border-radius: 12px;
+    margin: 0px;
+    background-color: @highlight;
+    border-radius: 10px;
 }
 
 #workspaces button.urgent {}
@@ -83,8 +90,9 @@ button:hover {}
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    padding: 0 10px;
-    background-color: @base;
+    margin: 0;
+    padding: 0 8px;
+    background-color: @foreground;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -104,7 +112,7 @@ label:focus {}
 #cpu {
     color: @red;
     border-radius: 12px 0 0 12px;
-    padding: 0 0 0 12px;
+    padding: 0 8px 0 8px;
 }
 
 
@@ -157,13 +165,13 @@ label:focus {}
 #backlight {
     color: @orange;
     border-radius: 0 12px 12px 0;
-    padding: 0 12px 0 0;
+    padding: 0 8px 0 8px;
 }
 
 
 #clock {
-    color: #FFFFFF;
-    background-color: @light;
+    color: @textwhite;
+    background-color: @foreground;
     border-radius: 12px;
     padding: 0 12px;
     margin: 0 0 0 4px;

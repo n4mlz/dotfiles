@@ -1,6 +1,4 @@
-general.import = [
-    "~/.config/alacritty/catppuccin-mocha-custom.toml",
-]
+general.import = ["~/.config/alacritty/catppuccin-mocha-custom.toml"]
 general.live_config_reload = true
 
 [env]

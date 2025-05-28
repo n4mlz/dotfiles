@@ -1,12 +1,17 @@
+@define-color background #17161c;
+@define-color foreground #232531;
+@define-color highlight #596072;
+@define-color textwhite #fef1ea;
+
 @define-color base rgba(29, 38, 76, 1);
 @define-color light rgba(99, 108, 145, 1);
 
 /* rainbow */
 
-@define-color red #ff7f7f;
-@define-color pink #ff7fff;
-@define-color blue #7f7fff;
-@define-color aqua #7fffff;
-@define-color green #7fff7f;
-@define-color yellow #ffff7f;
-@define-color orange #ffbf7f;
+@define-color red #ffa6a6;
+@define-color pink #ffa6ff;
+@define-color blue #a6a6ff;
+@define-color aqua #a6ffff;
+@define-color green #a6ffa6;
+@define-color yellow #ffffa6;
+@define-color orange #ffd2a6;

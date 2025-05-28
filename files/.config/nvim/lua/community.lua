@@ -1,3 +1,4 @@
+
 -- AstroCommunity: import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
@@ -8,6 +9,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
   -- import/override with your plugins folder
 }
