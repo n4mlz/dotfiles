@@ -1,8 +1,8 @@
 # init
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=10000000
+SAVEHIST=10000000
 setopt HIST_IGNORE_SPACE
 setopt incappendhistory
 
