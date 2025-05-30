@@ -1,7 +1,16 @@
 [user]
     email = n4mlz.dev@gmail.com
     name = n4mlz
-	signingkey = 091B69E9C76CF734
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZ5m8ZvMSzDJVe1xUVxqKKNHbbxQmyf5SXpjksxpsci
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
+
+[commit]
+  gpgsign = true
 
 [color]
     ui = true
